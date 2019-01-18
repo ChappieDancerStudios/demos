@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/362349__beerbelly38__knife-slash-2.wav-ecdeca2b71299c10a4d898507e6a4197.sample"
+
+[deps]
+
+source_file="res://assets/characters/rogue/attack/audio/362349__beerbelly38__knife-slash-2.wav"
+dest_files=[ "res://.import/362349__beerbelly38__knife-slash-2.wav-ecdeca2b71299c10a4d898507e6a4197.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
