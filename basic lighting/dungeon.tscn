@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tileset_with_occluders.tres" type="TileSet" id=1]
+[ext_resource path="res://troll.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;
+render_mode light_only;
+
+void light() {
+	LIGHT = LIGHT;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+
+[node name="dungeon" type="Node2D" index="0"]
+
+[node name="darkness" type="CanvasModulate" parent="." index="0"]
+
+position = Vector2( 1113.23, 321.885 )
+scale = Vector2( 35.7883, 17.005 )
+color = Color( 0.285156, 0.268448, 0.268448, 1 )
+
+[node name="floor" type="TileMap" parent="." index="1"]
+
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 1
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 0, 0, 196614, 1, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 0, 0, 327687, 1, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0 )
+_sections_unfolded = [ "Cell", "Occluder" ]
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="walls" type="TileMap" parent="." index="2"]
+
+position = Vector2( -398.796, 6.08838 )
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 1
+cell_y_sort = true
+cell_clip_uv = true
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -458743, 2, 0, -458742, 2, 0, -458741, 2, 0, -458740, 2, 0, -458739, 2, 0, -458738, 2, 0, -458737, 2, 0, -393207, 2, 0, -393201, 2, 0, -327671, 2, 0, -327665, 2, 0, -262135, 4, 0, -262129, 2, 0, -196599, 2, 0, -196593, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -131061, 3, 0, -131057, 2, 0, -65532, 2, 0, -65521, 2, 0, 4, 2, 0, 15, 2, 0, 65540, 2, 0, 65542, 3, 0, 65548, 3, 0, 65551, 2, 0, 131076, 2, 0, 131087, 2, 0, 196612, 2, 0, 196617, 1, 0, 196623, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0 )
+_sections_unfolded = [ "Cell", "Occluder" ]
+
+[node name="troll" parent="walls" index="0" instance=ExtResource( 2 )]
+
+material = SubResource( 2 )
+position = Vector2( 417.933, 277.246 )
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Z Index", "collision" ]
+
+
